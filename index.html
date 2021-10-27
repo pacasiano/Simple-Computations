@@ -5,6 +5,8 @@
         <meta charset="utf-8">
         <title>Assignment-1</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
+    </head>
     </head>
 
     <body>
@@ -20,7 +22,7 @@
           </div>
           
           <div id="main">
-            <span style="font-size:30px;cursor:pointer; color:white" onclick="openNav()">&#9776; open</span>
+          <span style="font-size:30px;cursor:pointer; color:white" class="top-left" onclick="openNav()">&#9776; Open</span>
           </div>
           
           <script>
@@ -93,21 +95,31 @@
 <style>
 
 html {    
-    background: url('20210410_221617755_iOS.jpg') no-repeat center fixed;     
+    background: url('pics2.png') no-repeat center fixed;     
     background-size: cover;
 }
 
     h1 {
         text-align: center;
-        font-family: "Source Sans Pro", sans-serif;
+        font-family: 'gotham';
         font-weight: bolder;
-        font-size: bold;
+        font-size: 45px;
     }
+
+    .top-left {
+       position: absolute;
+       top: 8px;
+       left: 16px;
+    }
+
+    a, h2, p {
+        font-family: 'Arvo';
+    } 
     
     
     button {
          text-align: center;
-        font-family: "Source Sans Pro", sans-serif;
+        font-family: "arvo";
         font-weight: normal;
     }
     
