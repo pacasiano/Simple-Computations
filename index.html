@@ -170,66 +170,64 @@
           }
         </script>
 
+         <div class='gitna'>
+          <p style="padding-left: 50px;"></p>
+          <p>1. Fahrenheit to Celsius:</p>
+          <p style="padding-inline: 10px;"></p>
+          <p>2. Celsius To Fahrenheit:</p>
+          <p style="padding-inline: 20px;"></p>
+          <p>3. Meter to Feet:</p>
+          <p style="padding-inline: 40px;"></p>
+          <p>4. Feet to Meter:</p>
+          <p style="padding-right: 85px;"></p>
+        </div>
+
+        <div class='gitna' >
+          <input type="text" id="one"  onkeydown="convertToCelsius()" onkeyup="convertToCelsius()">
+          <p style="padding-right: 30px;"></p>
+          <input type="text" id="two" onkeydown="convertToFahrenheit()" onkeyup="convertToFahrenheit()">
+          <p style="padding-right: 30px;"></p>
+          <input type="text" id="three" onkeydown="convertToFeet()" onkeyup="convertToFeet()">
+          <p style="padding-right: 30px;"></p>
+          <input type="text" id="four" onkeydown="convertToMeter()" onkeyup="convertToMeter()">
+        </div>
+
         <div class='gitna'>
-        <h3>1. Fahrenheit to Celsius: </h3>
-            <input type="text" id="one" onkeydown="convertToCelsius()" onkeyup="convertToCelsius()">
-            <p> Output: </p>
-            <textarea id="num0" readonly></textarea>
+          <p> Output: </p>
+        </div>
+
+        <div class='gitna'>
+          <textarea id="num0" readonly></textarea>
+          <p style="padding-right: 35px;"></p>
+          <textarea id="num1" readonly></textarea>
+          <p style="padding-right: 35px;"></p>
+          <textarea id="num2" readonly></textarea>
+          <p style="padding-right: 35px;"></p>
+          <textarea id="num3" readonly></textarea>
+        </div>
+
         <script>
-            function convertToCelsius() {
+             function convertToCelsius() {
             let fahrenheit = document.getElementById("one").value;
             let celsius = ((fahrenheit - 32)*5)/9;
             document.getElementById("num0").innerHTML = celsius + "°C";
             }
-        </script>
-        </div>
-
-        <div class='gitna'>
-        <h3>2. Celsius To Fahrenheit: </h3>
-
-            <input type="text" id="two" onkeydown="convertToFahrenheit()" onkeyup="convertToFahrenheit()">
-            <p> Output: </p>
-            <textarea id="num1" readonly></textarea>
-
-        <script>
             function convertToFahrenheit() {
             let celsius = document.getElementById("two").value;
             let fahrenheit = (celsius * 9/5) + 32;
             document.getElementById("num1").innerHTML = fahrenheit + "°f";
             }
-        </script>
-         </div>
-
-        <div class='gitna'>
-         <h3>3. Meter to Feet: </h3>
-
-            <input type="text" id="three" onkeydown="convertToFeet()" onkeyup="convertToFeet()">
-            <p> Output: </p>
-            <textarea id="num2" readonly></textarea>
-
-        <script>
             function convertToFeet() {
             let meter = document.getElementById("three").value;
             let feet = (meter * 3.281);
             document.getElementById("num2").innerHTML = feet + " ft";
             }
-        </script>
-         </div>
-
-        <div class='gitna'>
-        <h3>4. Feet to Meter: </h3>
-
-            <input type="text" id="four" onkeydown="convertToMeter()" onkeyup="convertToMeter()">
-            <p> Output: </p>
-            <textarea id="num3"></textarea>
-
-        <script>
             function convertToMeter() {
             let feet = document.getElementById("four").value;
             let meter = (feet / 3.281);
             document.getElementById("num3").innerHTML = meter + " m";
             }
-        </script>
+        </script>     
          </div>
  
     </body>
