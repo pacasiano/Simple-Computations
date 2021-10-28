@@ -6,26 +6,164 @@
         <title>Assignment-1</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
-    </head>
+
+        <style>
+          @font-face{
+          font-family: Montserrat_700;
+          src: url('https://fonts.googleapis.com/css2?family=Montserrat:700');
+          font-weight: 700;
+          }
+    
+          html {
+          background: black; 
+          background-size: cover;
+          }
+          
+          body {
+          background-color: black;
+          font-family: 'Montserrat';
+          }
+          
+          .container {
+          margin: auto;
+          width: 45%;
+          border: 5px;
+          padding: 20px;
+          }
+          
+          .top-left {
+          position: absolute;
+          top: 8px;
+          left: 16px;
+          }
+    
+          .bottomleft {
+            position: absolute;
+            bottom: 8px;
+          right: 16px;
+          }	
+          
+          #main {
+          transition: margin-left .5s;
+          padding: 16px;
+          }
+    
+          @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+          }
+          
+          .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+          }
+    
+          .sidenav a {
+          padding: 8px 8px 8px 8px;
+          text-decoration: none;
+          font-size: 18px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+          }
+    
+          .sidenav a:hover {
+          color: #ffffff;
+          }
+    
+          .sidenav hr {
+          width: 80%;
+          margin-top: 10px;
+          margin-left: 0;
+          }
+          
+          .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+          }
+          
+          h3, p {
+          color: white;
+          text-align: left;
+          }
+          
+          a {
+          font-weight: bolder;
+          font-size: 14px;
+          padding-left: 25%;
+          padding-right: 25%;
+                }
+          
+          p.subtitle {
+          font-size: 26px;
+          font-weight: 800;
+          display: block;
+          text-align: center;
+          }
+          
+          p.main {
+          font-size: 20px;
+          font-weight: 800;
+          }
+          
+          hr {
+          height: 10%;
+          background-color: white;
+          border: 10;
+          }
+    
+          div > img {
+          width: auto;
+          height: auto;
+          max-height: 100%;
+          max-width: 100%;
+          }
+
+          div.gitna {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+    
+        </style>
     </head>
 
     <body>
 
-        <h1 style="color:white;">Simple Computations in JavaScript</h1>
-
+      <div class="container">
+        <img src='picsf.png'>
+        <p class="subtitle">Simple Computations</p>
+        <hr>
+      </div>
+  
         <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="https://pacasiano.github.io/casiano/">Home</a>
-            <a href="#">other</a>
-            <a href="#">other</a>
-            <a href="#">other</a>
-          </div>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a>Navigation<br><hr></a>
+          <a href="https://pacasiano.github.io/casiano/">Home</a>
+          <a href="https://pacasiano.github.io/Simple-Computations/">About</a><br>
+          <a>Assignments<br><hr></a>
+          <a href="https://pacasiano.github.io/Simple-Computations/">Simple Computations</a>
+          <a href="#">Income Tax Calculator</a>
+          <a href="#">Factorial sum of N Natural Numbers</a>
+          <a href="#">Simple Payroll</a>
+		    </div>
           
-          <div id="main">
-          <span style="font-size:30px;cursor:pointer; color:white" class="top-left" onclick="openNav()">&#9776; Open</span>
-          </div>
+        <div id="main">
+          <span style="font-size:30px;cursor:pointer; color:white" class="top-left" onclick="openNav()">&#9776;</span>
+        </div>
           
-          <script>
+        <script>
           function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
             document.getElementById("main").style.marginLeft = "250px";
@@ -35,12 +173,12 @@
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft= "0";
           }
-          </script>
+        </script>
 
-        <h3 style="color:white;">1. Fahrenheit to Celsius:</h3>
-
+        <div class='gitna'>
+        <h3>1. Fahrenheit to Celsius: </h3>
             <input type="text" id="one" onkeydown="convertToCelsius()" onkeyup="convertToCelsius()">
-            <p style="color:white;">Output:</p>
+            <p> Output: </p>
             <textarea id="num0" readonly></textarea>
         <script>
             function convertToCelsius() {
@@ -49,13 +187,15 @@
             document.getElementById("num0").innerHTML = celsius + "°C";
             }
         </script>
-        <br>
+        </div>
 
-        <h3 style="color:white;">2. Celsius To Fahrenheit:</h3>
+        <div class='gitna'>
+        <h3>2. Celsius To Fahrenheit: </h3>
 
             <input type="text" id="two" onkeydown="convertToFahrenheit()" onkeyup="convertToFahrenheit()">
-            <p style="color:white;" >Output:</p>
+            <p> Output: </p>
             <textarea id="num1" readonly></textarea>
+
         <script>
             function convertToFahrenheit() {
             let celsius = document.getElementById("two").value;
@@ -63,13 +203,15 @@
             document.getElementById("num1").innerHTML = fahrenheit + "°f";
             }
         </script>
-        <br>
+         </div>
 
-         <h3 style="color:white;">3. Meter to Feet:</h3>
+        <div class='gitna'>
+         <h3>3. Meter to Feet: </h3>
 
             <input type="text" id="three" onkeydown="convertToFeet()" onkeyup="convertToFeet()">
-            <p style="color:white;" >Output:</p>
+            <p> Output: </p>
             <textarea id="num2" readonly></textarea>
+
         <script>
             function convertToFeet() {
             let meter = document.getElementById("three").value;
@@ -77,13 +219,15 @@
             document.getElementById("num2").innerHTML = feet + " ft";
             }
         </script>
-        <br>
+         </div>
 
-        <h3 style="color:white;">4. Feet to Meter:</h3>
+        <div class='gitna'>
+        <h3>4. Feet to Meter: </h3>
 
             <input type="text" id="four" onkeydown="convertToMeter()" onkeyup="convertToMeter()">
-            <h4 style="color:white;" >Output:</h4>
+            <p> Output: </p>
             <textarea id="num3"></textarea>
+
         <script>
             function convertToMeter() {
             let feet = document.getElementById("four").value;
@@ -91,122 +235,7 @@
             document.getElementById("num3").innerHTML = meter + " m";
             }
         </script>
-
-<style>
-
-html {    
-    background: url('pics2.png') no-repeat center fixed;     
-    background-size: cover;
-}
-
-    h1 {
-        text-align: center;
-        font-family: 'gotham';
-        font-weight: bolder;
-        font-size: 45px;
-    }
-
-    .top-left {
-       position: absolute;
-       top: 8px;
-       left: 16px;
-    }
-
-    a, h2, p {
-        font-family: 'Arvo';
-    } 
-    
-    
-    button {
-         text-align: center;
-        font-family: "arvo";
-        font-weight: normal;
-    }
-    
-    p.important { 
-        color:white;
-    }
-    
-    .dropbtn {
-      background-color: burlywood;
-      color: white;
-      padding: 16px;
-      font-size: 16px;
-      border: none;
-    }
-    
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-    
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    
-    .dropdown-content a:hover {background-color: #ddd;}
-    
-    .dropdown:hover .dropdown-content {display: block;}
-    
-    .dropdown:hover .dropbtn {background-color: burlywood;}
-    
-    
-    .sidenav {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-    }
-    
-    .sidenav a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
-    
-    .sidenav a:hover {
-      color: #f1f1f1;
-    }
-    
-    .sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-    
-    #main {
-      transition: margin-left .5s;
-      padding: 16px;
-    }
-    
-    @media screen and (max-height: 450px) {
-      .sidenav {padding-top: 15px;}
-      .sidenav a {font-size: 18px;}
-    }
-    </style>
+         </div>
  
     </body>
 
